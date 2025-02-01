@@ -1,0 +1,22 @@
+.bilibili-subtitle-downloader {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.download-btn {
+  padding: 10px;
+  background: #00a1d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.download-btn:hover {
+  opacity: 1;
+} 

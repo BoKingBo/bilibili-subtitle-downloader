@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "B站字幕输出",
+  "version": "1.0.0",
+  "description": "自动下载B站视频字幕",
+  "permissions": [
+    "webRequest",
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.bilibili.com/*",
+    "https://*.hdslb.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.bilibili.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
