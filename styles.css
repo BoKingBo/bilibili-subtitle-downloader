@@ -1,0 +1,178 @@
+.bilibili-subtitle-downloader {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-buttons {
+  display: none;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.bilibili-subtitle-downloader:hover .action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.download-btn {
+  padding: 8px 12px;
+  background: #00a1d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.download-btn:hover {
+  opacity: 1;
+}
+
+.download-btn.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.download-btn.loading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid #ffffff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s linear infinite;
+}
+
+/* AI输出框样式 */
+.ai-output {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(30px);
+  width: 400px;
+  height: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: monospace;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 自定义滚动条样式 */
+.ai-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ai-output::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.ai-output::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.ai-output::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.ai-output.active {
+  display: block;
+}
+
+/* 当父容器被hover且输出框处于active状态时显示 */
+.bilibili-subtitle-downloader:hover .ai-output.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* 添加API密钥输入框样式 */
+.api-key-input-container {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-80px); /* 位于按钮上方 */
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 9999;
+  width: 300px;
+}
+
+.api-key-input-container.active {
+  display: block;
+}
+
+.api-key-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.api-key-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.api-key-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.api-key-submit {
+  background: #00a1d6;
+  color: white;
+}
+
+.api-key-cancel {
+  background: #f1f1f1;
+  color: #666;
+} 

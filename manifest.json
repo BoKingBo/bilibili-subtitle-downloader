@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "B站字幕输出",
+  "version": "1.0.0",
+  "description": "自动下载B站视频字幕并生成笔记",
+  "permissions": [
+    "webRequest",
+    "downloads",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.bilibili.com/*",
+    "https://*.hdslb.com/*",
+    "https://api.siliconflow.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.bilibili.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+} 
