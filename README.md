@@ -28,7 +28,7 @@
 
 ## API密钥说明
 - 需要DeepSeek API密钥才能使用AI笔记功能
-- API密钥可以在 https://siliconflow.cn 注册获取
+- API密钥可以在 https://cloud.siliconflow.cn/i/13dvWfuz 注册获取
 - 密钥输入后会临时保存在当前会话中
 - 出于安全考虑，刷新页面后需要重新输入
 
